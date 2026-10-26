@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1 – Higher or Lower</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="task1.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <span class="brand">🎬 CineHub · Task 1</span>
+      <ul>
+        <li><a href="task2.html">Task 2: Kanban</a></li>
+        <li><a href="task3.html">Task 3: Ticket form</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Higher or Lower: movie ratings</h1>
+    <p class="lead">Is the next movie rated higher or lower than the current one? Equal ratings count as a right guess. Reach the winning streak before you lose all lives.</p>
+
+    <section id="game" class="game panel" aria-label="Game">
+      <div class="stats">
+        <div class="stat">Lives<b id="lives" class="lives"></b></div>
+        <div class="stat">Streak<b id="streak">0</b></div>
+        <div class="stat">Best streak<b id="best">0</b></div>
+        <div class="stat">Goal<b id="goal"></b></div>
+      </div>
+      <div class="duel">
+        <div class="movie" id="cardCurrent"></div>
+        <div class="movie" id="cardNext"></div>
+      </div>
+      <div class="btn-row">
+        <button id="btnHigher" class="btn btn-primary" type="button">▲ Higher (↑)</button>
+        <button id="btnLower" class="btn btn-primary" type="button">▼ Lower (↓)</button>
+        <button id="btnRestart" class="btn" type="button">Restart</button>
+      </div>
+      <p id="message" class="msg" role="status" aria-live="polite"></p>
+      <div class="banner b-win">🏆 You win!</div>
+      <div class="banner b-lose">💀 Game over</div>
+    </section>
+  </main>
+</body>
+</html>

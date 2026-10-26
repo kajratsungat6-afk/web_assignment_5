@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 2 – Kanban board</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="task2.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <span class="brand">🎬 CineHub · Task 2</span>
+      <ul>
+        <li><a href="task1.html">Task 1: Game</a></li>
+        <li><a href="task3.html">Task 3: Ticket form</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Festival team Kanban</h1>
+    <p class="lead">Move cards between columns. "In progress" holds at most 3 cards.</p>
+
+    <section class="panel toolbar" aria-label="Controls">
+      <div><label for="search">Search by title</label><input id="search" class="control" type="search" placeholder="e.g. poster"></div>
+      <div><label for="filterTag">Filter by tag</label><select id="filterTag"></select></div>
+      <div><label for="sortBy">Sort by priority</label>
+        <select id="sortBy">
+          <option value="none">Original order</option>
+          <option value="desc">High → Low</option>
+          <option value="asc">Low → High</option>
+        </select></div>
+    </section>
+
+    <section class="panel" aria-label="Progress">
+      <label for="progress">Finished: <span id="progressText"></span> · Hours left: <span id="hoursLeft"></span></label>
+      <progress id="progress" value="0" max="1"></progress>
+    </section>
+
+    <p id="message" class="msg" role="status" aria-live="polite"></p>
+
+    <div id="board" class="board">
+      <section class="column" id="wrap-todo"><h2>To do <span class="count" id="count-todo"></span></h2><div id="col-todo"></div></section>
+      <section class="column" id="wrap-doing"><h2>In progress <span class="count" id="count-doing"></span></h2><div id="col-doing"></div></section>
+      <section class="column" id="wrap-done"><h2>Done <span class="count" id="count-done"></span></h2><div id="col-done"></div></section>
+    </div>
+  </main>
+</body>
+</html>

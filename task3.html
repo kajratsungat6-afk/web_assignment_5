@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 3 – Ticket builder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="task3.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <span class="brand">🎬 CineHub · Task 3</span>
+      <ul>
+        <li><a href="task1.html">Task 1: Game</a></li>
+        <li><a href="task2.html">Task 2: Kanban</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Ticket builder</h1>
+    <p class="lead">Fill in the form. The ticket preview updates while you type.</p>
+
+    <div class="layout">
+      <section class="panel" aria-label="Booking form">
+        <form id="ticketForm">
+          <div id="summary" class="msg error summary" role="alert" tabindex="-1"></div>
+
+          <div class="field">
+            <label for="event">Event *</label>
+            <select id="event" name="event" required aria-describedby="err-event"><option value="">Choose an event…</option></select>
+            <p id="err-event" class="error-text"></p>
+          </div>
+          <div class="field">
+            <label for="date">Date *</label>
+            <input id="date" name="date" type="date" required aria-describedby="err-date">
+            <p id="err-date" class="error-text"></p>
+          </div>
+          <div class="field">
+            <label for="type">Ticket type *</label>
+            <select id="type" name="type" required aria-describedby="err-type hint-type"><option value="">Choose a type…</option></select>
+            <p id="hint-type" class="hint"></p>
+            <p id="err-type" class="error-text"></p>
+          </div>
+          <div class="field">
+            <label for="quantity">Quantity *</label>
+            <input id="quantity" name="quantity" type="number" min="1" max="10" step="1" required aria-describedby="err-quantity">
+            <p id="err-quantity" class="error-text"></p>
+          </div>
+          <div class="field">
+            <label for="name">Full name *</label>
+            <input id="name" name="name" type="text" required minlength="3" autocomplete="name" aria-describedby="err-name">
+            <p id="err-name" class="error-text"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required autocomplete="email" aria-describedby="err-email">
+            <p id="err-email" class="error-text"></p>
+          </div>
+          <div class="field">
+            <label for="promo">Promo code (optional)</label>
+            <input id="promo" name="promo" type="text" autocomplete="off" aria-describedby="err-promo hint-promo">
+            <p id="hint-promo" class="hint">Try WELCOME10, ASTANA20 or CINEMA15</p>
+            <p id="err-promo" class="error-text"></p>
+          </div>
+          <button class="btn btn-primary" type="submit">Book tickets</button>
+        </form>
+      </section>
+
+      <aside class="panel preview" aria-label="Ticket preview" aria-live="polite">
+        <h2>Live preview</h2>
+        <dl>
+          <dt>Event</dt><dd id="pvEvent"></dd>
+          <dt>Date</dt><dd id="pvDate"></dd>
+          <dt>Type</dt><dd id="pvType"></dd>
+          <dt>Quantity</dt><dd id="pvQty"></dd>
+          <dt>Name</dt><dd id="pvName"></dd>
+          <dt>Email</dt><dd id="pvEmail"></dd>
+          <dt>Discount</dt><dd id="pvDiscount"></dd>
+          <dt>Total</dt><dd id="pvTotal" class="total"></dd>
+        </dl>
+      </aside>
+    </div>
+
+    <section aria-label="Booked tickets">
+      <h2>Your tickets</h2>
+      <div id="tickets"></div>
+    </section>
+  </main>
+</body>
+</html>
